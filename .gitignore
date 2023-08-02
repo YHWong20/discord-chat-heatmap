@@ -1,0 +1,4 @@
+# Ignore pptx assets
+assets/*.pptx
+assets/AWS-Architecture-Icons-Deck_For-Light-BG_04282023.8bb05f733ab206e6d3a46411d8669c7d1b89942c
+assets/AWS-Architecture-Icons-Deck_For-Light-BG_04282023.8bb05f733ab206e6d3a46411d8669c7d1b89942c/*
