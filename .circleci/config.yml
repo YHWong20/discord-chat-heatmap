@@ -16,7 +16,7 @@ jobs:
           command: |
             cd src
             black . -l 79
-            pylint *.py
+            pylint *.py --rcfile=../.pylintrc
             flake8 .
             bandit -r .
 
