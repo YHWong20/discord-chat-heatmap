@@ -19,8 +19,8 @@ This project is built entirely on the Cloud, using Amazon Web Services (AWS). Am
 
 The project was developed using these tools:
 
-![AWS](assets/amazon.svg)
-![Python](assets/python.svg)
+[![AWS](assets/amazon.svg)](aws.amazon.com)
+[![Python](assets/python.svg)](python.org)
 
 ## Solution Architecture
 
