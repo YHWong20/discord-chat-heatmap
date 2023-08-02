@@ -3,7 +3,7 @@ orbs:
   python: circleci/python@2.1.1
 
 jobs:
-  build: # this can be any name you choose
+  build:
     executor: python/default
     working_directory: ~/src
     steps:
@@ -14,7 +14,7 @@ jobs:
       - run:
           name: Run Code Checks
           command: |
-            black . 
+            black . -l 79
             pylint .
             flake8 .
             bandit .
