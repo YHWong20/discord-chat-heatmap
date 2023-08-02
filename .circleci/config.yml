@@ -1,0 +1,25 @@
+version: 2.1
+orbs:
+  python: circleci/python@2.1.1
+
+jobs:
+  build: # this can be any name you choose
+    executor: python/default
+    working_directory: ~/src
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
+          pip-dependency-file: requirements.txt
+      - run:
+          name: Run Code Checks
+          command: |
+            black . 
+            pylint .
+            flake8 .
+            bandit .
+
+workflows:
+  main:
+    jobs:
+      - build
