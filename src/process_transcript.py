@@ -12,6 +12,7 @@ import boto3
 
 output_bucket_name = os.environ["outBucketName"]
 site_bucket_name = os.environ["siteBucketName"]
+local_wordcloud_path = os.environ["wordcloudPath"]
 sns_topic_arn = os.environ["snsArn"]
 today = datetime.datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
 
@@ -98,7 +99,7 @@ def generate_wordcloud(transcript):
         plt.axis("off")
 
         # Save a copy of wordcloud image locally
-        plt.savefig("/tmp/wordcloud.png")
+        plt.savefig(local_wordcloud_path)
     except Exception as err:
         logging.error(
             "Unable to generate wordcloud from transcript. Error: %s", err
