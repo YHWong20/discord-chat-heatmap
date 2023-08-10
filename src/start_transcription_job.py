@@ -63,6 +63,7 @@ def start_transcription(flac_uri, out_bucket_name):
             LanguageCode="en-US",
             MediaFormat="flac",
             Media={"MediaFileUri": flac_uri},
+            Settings={"VocabularyName": "custom-vocabulary"},
             OutputBucketName=out_bucket_name,
             OutputKey=f"transcribed-session-{today}.json",
         )
