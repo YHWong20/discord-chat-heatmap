@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+  <title>Discord Wordcloud Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wordcloud-container {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    #h1 {
+      text-align: center;
+    }
+
+    #analytics {
+      text-align: center;
+    }
+
+    #word-table {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .table {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="h1">
+    <h1>Discord Wordcloud Website</h1>
+  </div>
+
+  <div id="wordcloud-container">
+    <img src={{image_link}} alt="Wordcloud">
+  </div>
+
+  <div id="analytics">
+    <h2>Data generated on: {{date}} (UTC)</h2>
+    
+    <h2>Total Word Count: {{wordcount}}</h2>
+
+    <h2>Top 3 Most Repeated Words:</h2>
+    <table class="table">
+      <tr>
+        <th>No.</th>
+        <th>Word</th>
+        <th>Word Count</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>{{word1}}</td>
+        <td>{{count1}}</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>{{word2}}</td>
+        <td>{{count2}}</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>{{word3}}</td>
+        <td>{{count3}}</td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
