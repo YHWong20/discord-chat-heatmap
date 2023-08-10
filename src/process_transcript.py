@@ -14,6 +14,7 @@ output_bucket_name = os.environ["outBucketName"]
 site_bucket_name = os.environ["siteBucketName"]
 local_wordcloud_path = os.environ["wordcloudPath"]
 wordcloud_key = os.environ["wordcloudS3Key"]
+index_path = os.environ["indexPath"]
 index_key = os.environ["indexKey"]
 sns_topic_arn = os.environ["snsArn"]
 today = datetime.datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
@@ -187,11 +188,11 @@ def generate_site_index(transcript, bucket_name, wc_key, idx_key):
     )
 
     # Generate new template and upload to S3
-    with open("/tmp/index.html", "w", encoding="utf-8") as index_file:
+    with open(index_path, "w", encoding="utf-8") as index_file:
         index_file.write(updated_template)
     s3_resource = boto3.resource("s3")
     s3_resource.Bucket(site_bucket_name).upload_file(
-        "/tmp/index.html", "index.html", ExtraArgs={"ContentType": "text/html"}
+        index_path, "index.html", ExtraArgs={"ContentType": "text/html"}
     )
 
 
