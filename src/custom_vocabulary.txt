@@ -1,3 +1,0 @@
-Phrase	SoundsLike	IPA	DisplayAs
-bruh	bra		bruh
-bruh	boo-ruh		bruh
